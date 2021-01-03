@@ -1,0 +1,31 @@
+#contenido{
+    width: 100%;
+}
+
+#menues{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start
+}
+
+.menu{
+    flex: 1 1 calc(33% - 5%);    
+    padding: 2.5%;
+}
+
+
+.item{
+    display: flex;
+    justify-content: space-between;        
+    margin: 4 0 4 0;
+    align-items: center;
+}
+
+.nombre{
+    font-weight: 400;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+
+

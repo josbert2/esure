@@ -1,0 +1,246 @@
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+#user{
+    background-color: aliceblue;
+    background-color: #f25c00; 
+    margin: 10px;
+    margin-right: 20;
+    padding: 10px;
+    font-weight: 300;
+}
+
+
+#mainmenu
+{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 99999;
+    background-color: white;
+    box-shadow: 0px 0px 24px -1px;    
+}
+
+#mainmenu ul
+{
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#mainmenu li
+{
+    flex: 1 1 0;
+    /*background-color: #eb6909;*/
+    transition: background-color 0.8s ease;
+    color: aliceblue;
+}
+
+#mainmenu li:hover
+{
+    /*background-color: #eb9509;   */
+}
+
+#mainmenu li a
+{
+    padding: 4px;
+    color: aliceblue;
+    display: block;
+    
+}
+
+#dropdown
+{
+    display: none;
+    position: absolute;
+    background-color: #f25c00;
+    min-width: inherit;    
+    min-width: 25vw;
+    text-align: left;    
+    box-shadow: 9px 12px 39px 0px rgba(0,0,0,0.75);;
+}
+
+#hoverapp:hover #dropdown
+{
+    display: block;
+}
+
+
+
+#dropdown a
+{
+    display: block;
+    background-color: #ffcc00;
+    transition: background-color 0.8s ease;  
+    padding: 15px;
+    padding-left: 19px;
+    
+}
+
+#dropdown a:hover
+{
+ background-color: #ffdd22;
+}
+
+#ss
+{  
+    margin: 0;
+    padding: 4px;
+}
+
+#cerrar
+{
+    font-weight: 400;
+    display: inline !important;
+}
+
+#main
+{
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    //background-color: #eb6909;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;  
+    
+}
+
+#container
+{
+    display: flex;
+    background-color: #fdfdfd;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-height: 75vh;
+    width: 100%;
+    box-shadow: 0px 0px 38px -1px;    
+}
+
+
+#post{
+    margin-bottom: 8vh;   
+}
+
+
+
+#contenido
+{
+    margin: 5%;
+}
+
+.naranja
+{
+    background-color: #f25c00;
+}
+
+.naranja : hover
+{
+    background-color: #f25c00;
+}
+
+
+.amarillo
+{
+    background-color: #ffcc00;
+}
+
+.amarillo :hover
+{
+    background-color: #ffdd22;
+}
+
+.fondoTitulos
+{
+    background-color: #F7EAD8;
+}
+
+.porta
+{
+    background-color: #FF6E33;
+}
+
+.rosa
+{
+    background-color: #d00056;
+}
+
+.rosa :hover
+{
+    background-color: #f780b8;
+}
+
+.azul
+{
+    background-color: #007fa6;
+}
+
+.azul :hover
+{
+    background-color: #007fa6;
+}
+
+.verde
+{
+    background-color: #69cc00;
+}
+
+.verde :hover
+{
+    background-color: #92da6c;
+}
+
+.cyan
+{
+    background-color: #00a3cc;
+}
+
+.cyan :hover
+{
+    background-color: #4bc5f2;
+}
+
+.naranjaletra
+{
+    color: #f25c00;
+    border-bottom-color: #f25c00;
+}
+
+.amarilloletra
+{
+    color: #ffcc00;
+    border-bottom-color: #ffcc00;
+}
+
+.rosaletra
+{
+    color: #d00056;
+    border-bottom-color: #d00056;
+}
+
+.azulletra
+{
+    color: #007fa6;
+    border-bottom-color: #007fa6;
+}
+
+.verdeletra
+{
+    color: #69cc00;
+    border-bottom-color: #69cc00;
+}
+
+.cyanletra
+{
+    color: #4bc5f2;
+    border-bottom-color: #4bc5f2;
+}
+

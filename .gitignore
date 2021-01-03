@@ -1,0 +1,4 @@
+*.txt
+logs/
+/logs/
+/logs/mylog.txt
