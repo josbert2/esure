@@ -211,7 +211,7 @@ function getPropiedadesDestacadas($conn){
 														"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"https://images.pexels.com/photos/6030228/pexels-photo-6030228.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 alt=\"properties\"/>".
 														"<div class=\"tituloDestacada\" style=\"pposition:relative;0border:2px solid red;margin-left:250px;\" id=\"titlePropiedad\">".
 															"<h2>&nbsp;$descripcion_01</h2>".
-															"<button id=\"divDtitlePropiedad\" type=\"button\" style=\"position:relative;margin-left:3px;width:250px;font-size:12px;\" onclick=\"$onlick\" class=\"ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only\" role=\"button\" aria-disabled=\"false\"><span class=\"ui-button-text\" style=\"background-color:#fff;color:#000;font-weight:bold;\">$importe_operacion</br><span style=\"font-size:17px;\">Ver Detalles</span></span>	</button>".
+															"<button id=\"divDtitlePropiedad\" type=\"button\" style=\"position:relative;margin-left:3px;width:250px;font-size:12px;\" onclick=\"$onlick\" class=\"ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only\" role=\"button\" aria-disabled=\"false\"><span class=\"ui-button-text\" style=\"background-color:#fff;color:#000;font-weight:bold;\"><span class=\" justify-content-center d-flex id-vivi\">$importe_operacion</span></br><span  class=\"main-color justify-content-center d-flex m-t-5\" style=\"font-size:17px;\">Ver Detalles</span></span>	</button>".
 														"</div>".
 													"</div>".
 												"</div>";
@@ -486,11 +486,11 @@ function getFiltroPropiedades($conn, $id_localidad = 0, $id_tipo_comercializacio
 																	"<img src=\"https://images.pexels.com/photos/5539157/pexels-photo-5539157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
 																	"<div class=\"status sold\">ID: $id_propiedad ".$operacion."</div>".
 																"</div>".
-																"<a target=\"_blank\" href=\"/modules_/imno/detalle_publico_propiedad.php?id=$id_propiedad\"><span class=\"m-t-10 d-flex text-left\" style=\"font-size:12px;\">".$direccion."<span></a>".
-																"<div class=\"text-left price\" style=\"height:50px; 0border:1px solid blue;\">".
+																"<a target=\"_blank\" href=\"/modules_/imno/detalle_publico_propiedad.php?id=$id_propiedad\"><span class=\"m-t-10 d-flex text-left\" style=\"font-size:12px; margin-bottom: 10px;margin-left:10px;\">".$direccion."<span></a>".
+																"<div class=\"text-left price\" style=\"margin-left:10px;height:50px; 0border:1px solid blue;\">".
 																	$importe_operacion.
 																"</div>".
-																"<div class=\"d-flex\">".
+																"<div class=\"d-flex content-padding\" style=\"border-top: 1px solid #eee;\">".
 																"<div class=\"d-flex align-items-center m-r-auto\">".
 																//JOS
 																//"<img class=\"m-r-10\"   title=\"Compartir por Wathsapp\" style=\"display:inline;width:40px;hheight:300px; text-align:left\" src=\"/icon/whatsapp.png\" onclick=\"window.open('https://api.whatsapp.com/send?text=".$comentario_publicacion."&nbsp;$url','_blank')\"></img>".

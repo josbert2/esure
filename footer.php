@@ -2,17 +2,19 @@
 
 $data = "<a target=\"blank\" href=\"https://api.whatsapp.com/send?phone=".$_SESSION["INMO_TE"]."&text=Hola, estoy en tu sitio y necesito información
  \">".
-	"<img src=\"/icon/whatsapp.png\" alt=\"Escribinos y pronto te responderemos\" style=\"display: block!important;".
-	"	padding: 0px 5px!important;".
+	"<img src=\"./icon/what.svg\" alt=\"Escribinos y pronto te responderemos\" style=\"display: block!important;".
 	"	border-radius: 50%!important;".
 	"	text-align: center!important;".
-	"	position: fixed!important;".
+  "	position: fixed!important;".
+  " background-color: #fff;".
 	"	bottom: 15px!important;".
 	"	z-index: 999!important;".
 	"	left: 20px!important;".
 	"	box-shadow: 2px -1px 6px 0px rgba(0, 0, 0, 0.12)!important;".
 	"	font-size: 3px!important;".
-	"	max-height: 80px!important;cursor:pointer;\"/>".
+  "	max-height: 80px!important;cursor:pointer;".
+  
+  " padding: 8px;\"/>".
 "</a>";
 
 echo($data);

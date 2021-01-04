@@ -1,4 +1,4 @@
-$madcolor: #2ecc71;
+$madcolor: #107e7f;
 body{
     background-color: #fff !important;
 }
@@ -35,9 +35,55 @@ body{
 body{
     font-family: pangram-light;
 }
+.sl-slider-wrapper{
+    height: 600px !important
+}
+#nav-dots{
+    position: absolute !important;
+    /* top: -100px; */
+    border: none !important;
+    width: 100%;
+    z-index: 999999;
+    /* right: 50%; */
+    top: auto !important;
+    display: flex;
+    height: 50px;
+    bottom: 50px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    span{
+        width: 15px;
+        height: 15px;
+        background-color: #d8d8d8;
+        border: 4px solid transparent;
+        display: block;
+        border-radius: 50%;
+
+        margin-right: 20px;
+        &.nav-dot-current{
+            border: 4px solid #000000;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
+.navbar-wrapper{
+    height: 90px; 
+    .navbar-inverse{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
 .banner-search{
     background-color: #fff;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.01),0 4px 6px -2px rgba(0,0,0,0.01);
+    //box-shadow: 0 10px 15px -3px rgba(0,0,0,0.01),0 4px 6px -2px rgba(0,0,0,0.01);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 30%), 5px 2px 6px -2px rgb(0 0 0 / 22%);
     border-radius: 6px;
     margin-top: -50px;
     z-index: 999999999999999;
@@ -65,6 +111,7 @@ body{
     .btn.btn-success{
         height: 44px;
         text-transform: uppercase;
+        background-color: $madcolor !important;
         &:hover{
             background-color: 0  !important;
             background: none !important;
@@ -72,14 +119,20 @@ body{
         }
     }
 }
+.content-padding{
+    padding: 10px;
+}
+.status.sold{
+    background: $madcolor;
+}
 #owl-example{
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 35px;
-    margin-top: 40px;
     justify-items: center;
     .properties{
         margin-bottom: 0;
+        padding: 0;
     }
     .properties-listing div.properties .status{
         font-family: 'pangram-regular';
@@ -157,5 +210,107 @@ body{
     transition: all .2s;
     &:hover{
         color: $madcolor !important
+    }
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: transparent !important;
+    color:#545454;
+    font-family: pangram-bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+    padding: 10px 25px;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color:#545454;
+    font-family: pangram-bold;
+    letter-spacing: 1px;
+    font-size: 13px; 
+}
+.nav.navbar-nav.navbar-right{
+    li.active{
+        border-bottom: 2px solid $madcolor;
+        transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover{
+           
+            background-color: $madcolor;
+            a{
+                color:#fff !important;
+            }
+        }
+    }
+} 
+
+.h2-style{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    span{
+        background: #fff;
+        padding: 49px;
+        z-index: 99;
+        font-family: pangram-bold;
+    }
+    &:before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1.1px;
+        background-color: #333;
+    }
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.tituloDestacada{
+    height: 100%;
+    h2{
+        font-family: pangram-bold;
+        font-size: 50px;    
+        margin: 0;
+        line-height: 62px;
+    }
+    .ui-button.ui-widget{
+        margin-top: 50px;
+    } 
+    .ui-button-text{
+        padding: 1em 2em;
+        font-family: pangram-regular;
+    }
+}
+
+.main-color{
+    color:$madcolor;
+}
+
+.id-vivi{
+    font-size: 14px;
+}
+
+.footer{
+    background: none;
+    color: #ababab!important;
+    background-color: #252525!important;
+    padding-top: 5.125rem!important;
+    padding-bottom: 3.125rem!important;
+    h4{
+        border-bottom: 1px solid #c1c1c1;
+    margin-bottom: 23px;
+    padding-bottom: 23px;
+    }
+    ul{
+       li{
+         padding-bottom: 15px;
+        a{
+            color: #ababab!important;
+            font-size: 15px !important;
+            font-family: pangram-regular;
+        }
+       } 
     }
 }

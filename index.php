@@ -614,8 +614,20 @@ $(document).ready(function () {
 
 
 		<!-- Nav Starts -->
-		<div class="navbar-collapse  collapse" >
-		  <ul class="nav navbar-nav navbar-right">
+		<div class="navbar-collapse  collapse " >
+		 	<div class="d-flex">
+			 <ul class="m-r-auto">
+		  	<li>
+				<a href="index.php">
+				<!--Jos-->
+				<!--<img src="./icon/<?php echo($_SESSION["icon"]);?>" height="50px" width="50px" alt="Realestate">-->
+
+				
+				<img src="https://inmosalerno.esecure.com.ar/icon//logos/_salerno.png" height="50px" width="100px" alt="Realestate">
+				</a>
+			</li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right d-flex align-items-center">
 		   <li class="active"><a href="index" style="z-index:99999999">Principal</a></li>
 			<li><a href="about">Nuestra Empresa</a></li>
 			<li><a href="agents">Equipo</a></li>         
@@ -623,6 +635,7 @@ $(document).ready(function () {
 			<li><a href="contact">Contacto</a></li>
 			 <li><a href="login">Ingresar</a></li>
 		  </ul>
+			 </div>
 		</div>
 		<!-- #Nav Ends -->
 
@@ -736,6 +749,11 @@ $(document).ready(function () {
 
 <div class="container">
   <div id="cntBusqueda" style="display:none;" class="properties-listing spacer">
+	<div class="h2-style">
+		<span>
+			PROPIEDADES DESTACADA
+		</span>	
+	</div>
     <div id="owl-example" class="owl-carousel ">
 		<?php echo($arrayImage["cnt_NO_preferenciales"]);	?>
     </div>

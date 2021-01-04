@@ -62,13 +62,20 @@
 
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
+              <ul>
+                <li>
+                  <a href="index.php">
+                    <img src="./icon/<?php echo($_SESSION["icon"]);?>" height="100px" alt="Realestate">
+                  </a>
+                </li>
+              </ul>
               <ul class="nav navbar-nav navbar-right">
                <li class="active"><a href="index">Principal</a></li>
                 <li><a href="about">Nuestra Empresa</a></li>
                 <li><a href="agents">Equipo</a></li>         
              
-                <li><a href="contact">Contacto</a></li>
-				 <li><a href="login">Ingresar</a></li>
+                 <li><a href="contact">Contacto</a></li>
+				         <li><a href="login">Ingresar</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
