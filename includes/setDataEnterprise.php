@@ -1,8 +1,9 @@
 <?php if(session_id()==''){session_start();}
 
-$_SESSION["overus"] = "<h3>Sobre Nostros</h3>
-								<p>¿Quiénes Somos?</br>
-						<span style=\"text-align:justfy\"><span style=\"font-weight:bold;text-align:justfy\"> TU INMOBILIARIA NEGOCIOS INMOBILIARIOS </span> es una empresa con centro de operaciones en la ciudad de Tanti, Provincia de Córdoba, Argentina, y enfoca sus actividades en proporcionar servicios inmobiliarios de excelencia. Nuestra empresa se encuentra conformada por un equipo de profesionales, contamos con infraestructura y el conocimiento necesario para cubrir las necesidades de nuestros clientes en todo lo relacionado a inmuebles, además de servicios complementarios como gestoría inmobiliaria. 
+$_SESSION["overus"] = "<h3 class='m-b-15 title-main'>Sobre Nostros</h3>
+								<p class=''>¿Quiénes Somos?</br>
+						<div class='m-b-5'></div>
+						<span class=' sub-title' style=\"text-align:justfy\"><span style=\"font-weight:bold;text-align:justfy\"> TU INMOBILIARIA NEGOCIOS INMOBILIARIOS </span> es una empresa con centro de operaciones en la ciudad de Tanti, Provincia de Córdoba, Argentina, y enfoca sus actividades en proporcionar servicios inmobiliarios de excelencia. Nuestra empresa se encuentra conformada por un equipo de profesionales, contamos con infraestructura y el conocimiento necesario para cubrir las necesidades de nuestros clientes en todo lo relacionado a inmuebles, además de servicios complementarios como gestoría inmobiliaria. 
 						Buscamos un alto nivel de competitividad; con el firme propósito de incrementar el valor de  sus inmuebles y conquistando nuevos mercados; y por ende, alcanzar metas de mayor venta Nos destacamos de nuestros competidores, incorporando flexibilidad de servicios, buenos productos y amplias formas de pagos, todo esto combinado con un trato personalizado y una excelente actitud y aptitud de nuestro grupo de colaboradores, soporte técnico profesional y alta calidad del servicio para nuestros clientes.</span>
 						</p>
 						</p>";

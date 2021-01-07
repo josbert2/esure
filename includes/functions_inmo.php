@@ -207,8 +207,8 @@ function getPropiedadesDestacadas($conn){
 			
 			$arrayRta["cnt_preferenciales"] .="<div class=\"sl-slide\" data-orientation=\"horizontal\" data-slice1-rotation=\"-25\" data-slice2-rotation=\"-25\" data-slice1-scale=\"2\" data-slice2-scale=\"2\">".
 													"<div class=\"sl-slide-inner\"  style=\"0border:2px solid orange;\">".
-														//"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"/devs/proyectos/esecure_new/modules_/imno/descargar_imagen.php?id_imagen=".$id_imagen."&dataName=$_SESSION[db_name]\" alt=\"properties\"/>".
-														"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"https://images.pexels.com/photos/6030228/pexels-photo-6030228.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 alt=\"properties\"/>".
+														"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"/devs/proyectos/esecure_new/modules_/imno/descargar_imagen.php?id_imagen=".$id_imagen."&dataName=$_SESSION[db_name]\" alt=\"properties\"/>".
+														//"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"https://images.pexels.com/photos/6030228/pexels-photo-6030228.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 alt=\"properties\"/>".
 														"<div class=\"tituloDestacada\" style=\"pposition:relative;0border:2px solid red;margin-left:250px;\" id=\"titlePropiedad\">".
 															"<h2>&nbsp;$descripcion_01</h2>".
 															"<button id=\"divDtitlePropiedad\" type=\"button\" style=\"position:relative;margin-left:3px;width:250px;font-size:12px;\" onclick=\"$onlick\" class=\"ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only\" role=\"button\" aria-disabled=\"false\"><span class=\"ui-button-text\" style=\"background-color:#fff;color:#000;font-weight:bold;\"><span class=\" justify-content-center d-flex id-vivi\">$importe_operacion</span></br><span  class=\"main-color justify-content-center d-flex m-t-5\" style=\"font-size:17px;\">Ver Detalles</span></span>	</button>".
@@ -450,6 +450,7 @@ function getFiltroPropiedades($conn, $id_localidad = 0, $id_tipo_comercializacio
 				$stmtIMA = $conn->prepare($sql);
 				$stmtIMA->execute();
 				$registros = $stmtIMA->rowCount();
+				
 				if($registros > 0){
 					
 					
@@ -477,13 +478,36 @@ function getFiltroPropiedades($conn, $id_localidad = 0, $id_tipo_comercializacio
 				
 				
 				$url  = "$_SESSION[INMO_URL]/modules_/imno/detalle_publico_propiedad.php?id=$row[id]";
+				//$arrayImg2 = array();
+//$sql2 ="SELECT id 
+				//FROM inmo_imagenes
+				//WHERE id_propiedad = 68 ";
+					
+//$stmt2 = $conn->prepare($sql2);
+				//$stmt2->execute();
+						
+			
+				//if($registros == 1){
+				//	$row 			 = $stmt->fetch();
+				//	$id_imagen  = $row["id"];
+				//}
+
+				//while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+				//	$arrayImg2 = $row2['id'];
+					//echo json_encode($arrayImg);
+				//}
+				
+				
+				// json_encode($arrayImg2);
+			
+					
 				
 							
-				$arrayRta["cnt_NO_preferenciales"] .="<div class=\"owl-item\" style=\"Wwidth:240px;hheight:370px;padding-left:5px;;padding-top:5px;0border:3px solid red;\">
+				$arrayRta["cnt_NO_preferenciales"] .="<div class=\"owl-item\" data-id=\". $row[id] .\" style=\"Wwidth:240px;hheight:370px;padding-left:5px;;padding-top:5px;0border:3px solid red;\">
 															<div class=\"properties\">".
 																"<div class=\"image-holder\">".
-																	//"<img src=\"/modules_/imno/descargar_imagen.php?id_imagen=".$id_imagen."&dataName=$_SESSION[db_name]\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
-																	"<img src=\"https://images.pexels.com/photos/5539157/pexels-photo-5539157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
+																	"<img src=\"/modules_/imno/descargar_imagen.php?id_imagen=".$id_imagen."&dataName=$_SESSION[db_name]\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
+//"<img src=\"https://images.pexels.com/photos/5539157/pexels-photo-5539157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
 																	"<div class=\"status sold\">ID: $id_propiedad ".$operacion."</div>".
 																"</div>".
 																"<a target=\"_blank\" href=\"/modules_/imno/detalle_publico_propiedad.php?id=$id_propiedad\"><span class=\"m-t-10 d-flex text-left\" style=\"font-size:12px; margin-bottom: 10px;margin-left:10px;\">".$direccion."<span></a>".
@@ -515,7 +539,30 @@ function getFiltroPropiedades($conn, $id_localidad = 0, $id_tipo_comercializacio
 	
 	return $arrayRta;
 };
+function arrayIMG($conn, $id){
+	$id_imagen = 0;
+	
+	
+	$sql ="SELECT id 
+	FROM inmo_imagenes
+	WHERE id_propiedad = $id ";
+		
+	$stmt = $conn->prepare($sql);
+	$stmt->execute();
+			
+	$registros = $stmt->rowCount();
+	//if($registros == 1){
+	//	$row 			 = $stmt->fetch();
+	//	$id_imagen  = $row["id"];
+	//}
 
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		$arrayImg = $row['id'];
+		//echo json_encode($arrayImg);
+	}
+	
+	return json_encode($arrayImg);
+};
 function getImagenPropiedad($conn, $id){
 	$id_imagen = 0;
 	
