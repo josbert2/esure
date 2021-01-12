@@ -14,7 +14,7 @@ if($REMOTE_ADDR == ""){
 	
 } else {
 	//include $_SERVER['DOCUMENT_ROOT']."/includes/sendMail.php";	
-	include $r."/includes/sendMail.php";	
+	//include "./includes/sendMail.php";	
 	
 }
 

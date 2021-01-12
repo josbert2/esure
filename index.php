@@ -86,10 +86,14 @@ $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
 	<link rel="stylesheet" type="text/css" href="./assets/slitslider/css/style.css" />
 	<link  type="text/css" rel="stylesheet"	media="all" href="./css/ui-lightness/jquery-ui-1.10.3.custom.css"></link>
 	<link rel="stylesheet" type="text/css" href="./assets/slitslider/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjnKGGqEz8RBxhQ5LalTkv4GxoETKxwAo&callback=initMap" async defer></script>
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
 	<link rel="icon" type="image/png" href="/icon/<?php echo($_SESSION["icon"]);?>"  />
 	<link rel="stylesheet" href="./css/index.css" />
+	
 <!-- slitslider -->
 
 	<style>
@@ -293,8 +297,13 @@ function buscarPropiedades(){
 		data: datos
 	}).done(
 		function (resp) {
-			crearCarrusel();
-			$("#owl-example").html(resp);
+		
+				crearCarrusel();
+				$("#owl-example").html(resp);
+			
+			
+			$('.skeletorr').hide()
+	
 		}
 	);
 	
@@ -325,7 +334,26 @@ function compartirFacebook(id_propiedad){
 
 function crearCarrusel(){
 	
-	$("#owl-example").owlCarousel();
+	
+	
+	$("#owl-example").owlCarousel({
+		responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:false
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:false
+        }
+    }
+	});
+	
 	
 	$('.listing-detail span').tooltip('hide');
 	$('.carousel').carousel({
@@ -433,6 +461,14 @@ function consultarPropiedades(obj){
 				}	
 				
 				$("#loader_center").css("display","none");
+				$('.slick-img').slick({
+					dots: true,
+					nav: true,
+					slidesToShow: 1,
+  					slidesToScroll: 1,
+					prevArrow:'<div class="slick-d slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.71 15.88L10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z"/></svg></div>',
+                    nextArrow:'<div class="slick-d slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg></div>'
+				});
 			}		
 		);		
 	 },1000);
@@ -600,10 +636,20 @@ $(document).ready(function () {
 
 	<div class="navbar-inverse" role="navigation">
 	  <div class="container">
-		<div class="navbar-header">
+		<div class="navbar-header d-flex-max">
+			<div class="hidden-min">
+				<div class="logo-navbar " style="padding-left: 10px">
+				<a href="index.php">
+				<!--Jos-->
+				<!--<img src="./icon/<?php echo($_SESSION["icon"]);?>" height="50px" width="50px" alt="Realestate">-->
 
+				
+					<img src="https://inmosalerno.esecure.com.ar/icon//logos/_salerno.png" height="50px" width="100px" alt="Realestate">
+				</a>
+				</div>
+			</div>
 
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" style="color: #333333">
+		  <button type="button" class="m-l-auto navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" style="color: #333333">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -615,9 +661,9 @@ $(document).ready(function () {
 
 		<!-- Nav Starts -->
 		<div class="navbar-collapse  collapse " >
-		 	<div class="d-flex">
+		 	<div class="d-flex flex-column-max">
 			 <ul class="m-r-auto">
-		  	<li>
+		  	<li class="hidden-min-log">
 				<a href="index.php">
 				<!--Jos-->
 				<!--<img src="./icon/<?php echo($_SESSION["icon"]);?>" height="50px" width="50px" alt="Realestate">-->
@@ -627,7 +673,7 @@ $(document).ready(function () {
 				</a>
 			</li>
 		  </ul>
-		  <ul class="nav navbar-nav navbar-right d-flex align-items-center">
+		  <ul class="nav navbar-nav navbar-right d-flex align-items-center flex-column-max">
 		   <li class="active"><a href="index" style="z-index:99999999">Principal</a></li>
 			<li><a href="about">Nuestra Empresa</a></li>
 			<li><a href="agents">Equipo</a></li>         
@@ -731,10 +777,10 @@ $(document).ready(function () {
 							<div class="col-xs-6 col-sm-3">
 									<input type="text" id="precio_hasta" class="form-control select2 select2-hidden-accessible" placeholder="Precio Hasta	" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-sm-3 full-max-input-select">
 									<input type="text" id="superficie" class="form-control select2 select2-hidden-accessible" placeholder="Superficie Mínima" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-sm-3 full-max-btn">
 								  <button class="btn btn-success"  onclick="buscarPropiedades()">Buscar</button>
 							</div>
 						</div>
@@ -754,7 +800,32 @@ $(document).ready(function () {
 			PROPIEDADES DESTACADA
 		</span>	
 	</div>
+	<div class="row skeletorr">
+		<?php
+		for ($i = 0; $i <= 5; $i++) { ?>
+		
+		
+		<div class="col-md-4">
+			<div class="skeleton">
+				<div class="skeleton-wrapper">
+				<div class="skeleton-wrapper-inner">
+					<div class="skeleton-wrapper-body">
+					<div class="skeleton-avatar"></div>
+					
+					<div class="skeleton-content-1"></div>
+					<div class="skeleton-content-2"></div>
+					<div class="skeleton-content-3"></div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<?php
+		}
+		?>
+	</div>
     <div id="owl-example" class="owl-carousel ">
+		
 		<?php echo($arrayImage["cnt_NO_preferenciales"]);	?>
     </div>
   </div>
