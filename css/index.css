@@ -564,9 +564,9 @@ div.skeleton-content-3 {
     margin: 0 !important;
   }
   .tituloDestacada h2 {
-    line-height: 48px;
-    padding-top: 55px;
-    font-size: 33px !important;
+    line-height: 38px;
+    padding-top: 18px;
+    font-size: 25px !important;
   }
 
   .tituloDestacada .ui-button.ui-widget {
@@ -599,6 +599,14 @@ div.skeleton-content-3 {
   #nav-dots span {
     width: 15px;
     height: 8px;
+  }
+
+  .sl-slider-wrapper {
+    height: 320px !important;
+  }
+
+  .sl-content-wrapper {
+    height: 100%;
   }
 }
 
