@@ -547,7 +547,6 @@ div.skeleton-content-3 {
   #owl-example .owl-item {
     height: 204px;
     width: 100% !important;
-    padding: 20px;
   }
   #owl-example .owl-item .img-container {
     height: 230px;
@@ -565,8 +564,9 @@ div.skeleton-content-3 {
     margin: 0 !important;
   }
   .tituloDestacada h2 {
-    line-height: 25px;
+    line-height: 48px;
     padding-top: 55px;
+    font-size: 33px !important;
   }
 
   .tituloDestacada .ui-button.ui-widget {

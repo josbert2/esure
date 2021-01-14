@@ -536,7 +536,7 @@ body{
     #owl-example .owl-item{
         height: 204px;
         width: 100% !important;
-        padding: 20px;
+
         .img-container{
             height: 230px;  
         }
@@ -552,8 +552,9 @@ body{
     .tituloDestacada{
         margin: 0 !important;
         h2{
-            line-height: 25px;
+            line-height: 48px;
             padding-top: 55px;
+            font-size: 33px !important;
         }
     }
     .tituloDestacada .ui-button.ui-widget{
