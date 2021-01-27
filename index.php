@@ -59,7 +59,7 @@ $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
 <head>
 
 <title><?php echo($_SESSION["title"])?></title>
-<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
+
 
 
 	
@@ -93,11 +93,14 @@ $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
 
 	<link rel="icon" type="image/png" href="/icon/<?php echo($_SESSION["icon"]);?>"  />
 	<link rel="stylesheet" href="./css/index.css" />
+	<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 	
 <!-- slitslider -->
 
 	<style>
-		
+			.banner-search{
+			    padding: 35px 0;	
+			}
 	</style>
 
 </head>

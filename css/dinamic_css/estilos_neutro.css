@@ -60,6 +60,23 @@ p {
   background-color: #a59d92;
   border-color: #2e6da4;
 }
+
+.owl-item .btn-esecure{
+  background-color: #a59d92;
+  cursor: pointer;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+  color: #a59d92 !important;
+}
+
+.nav.navbar-nav.navbar-right li.active{
+  border-color  #a59d92;
+}
+
+.nav.navbar-nav.navbar-right li.active:hover{
+  background-color:  #a59d92;
+}
 .btn-esecure:focus,
 .btn-esecure.focus {
   color: #fff;

@@ -60,6 +60,21 @@ p {
   background-color: #dc5c05;
   border-color: #2e6da4;
 }
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+  color:  #dc5c05 !important;}
+
+.nav.navbar-nav.navbar-right li.active{
+  border-color: #dc5c05;
+  color:  #dc5c05;
+}
+.owl-item .btn-esecure{
+  background-color: #dc5c05;
+  cursor: pointer;
+}
+
+.nav.navbar-nav.navbar-right li.active:hover{
+  background-color: #dc5c05;
+}
 .btn-esecure:focus,
 .btn-esecure.focus {
   color: #fff;
