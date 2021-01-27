@@ -115,7 +115,7 @@ body {
 .banner-search .btn.btn-success {
   height: 44px;
   text-transform: uppercase;
-  background-color: #107e7f !important;
+  background-color: var(--main-color) !important;
 }
 .banner-search .btn.btn-success:hover {
   background-color: 0 !important;
@@ -128,7 +128,7 @@ body {
 }
 
 .status.sold {
-  background: #107e7f;
+  background: var(--main-color);
 }
 
 #owl-example {
@@ -143,7 +143,7 @@ body {
 }
 #owl-example .properties-listing div.properties .status {
   font-family: "pangram-regular";
-  background-color: #107e7f !important;
+  background-color: var(--main-color) !important;
 }
 #owl-example .owl-item {
   border-radius: 6px;
@@ -190,7 +190,7 @@ body {
 }
 
 .owl-item .btn-esecure {
-  background-color: #107e7f;
+  background-color: var(--main-color);
   height: 38px;
   text-align: center;
   text-transform: uppercase;
@@ -201,7 +201,7 @@ body {
 }
 .owl-item .btn-esecure:hover {
   background-color: none;
-  border: 1px solid #107e7f;
+  border: 1px solid var(--main-color);
   color: #fff;
 }
 
@@ -214,7 +214,7 @@ body {
   transition: all 0.2s;
 }
 .text-left.price:hover {
-  color: #107e7f !important;
+  color: var(--main-color) !important;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
@@ -234,11 +234,11 @@ body {
 }
 
 .nav.navbar-nav.navbar-right li.active {
-  border-bottom: 2px solid #107e7f;
+  border-bottom: 2px solid var(--main-color);
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .nav.navbar-nav.navbar-right li.active:hover {
-  background-color: #107e7f;
+  background-color: var(--main-color);
 }
 .nav.navbar-nav.navbar-right li.active:hover a {
   color: #fff !important;
@@ -286,7 +286,7 @@ body {
 }
 
 .main-color {
-  color: #107e7f;
+  color: var(--main-color);
 }
 
 .id-vivi {

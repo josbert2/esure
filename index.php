@@ -19,7 +19,8 @@ if(is_numeric($empresa)){
 	$empresa = $aux[0];
 	//$empresa = str_replace("/", "", $aux[2]);
 };
-$r = $_SERVER['DOCUMENT_ROOT'] . '/devs/proyectos/esecure_new/';
+
+$r = dirname(__FILE__). '/';
 
 //include $_SERVER['DOCUMENT_ROOT']."/includes/functions.php";
 include $r."/includes/functions.php";
@@ -52,6 +53,7 @@ if($registros == 1){
 }		
 
 $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
+$_SESSION["css_color"]		 = getCSSColor( $row["colorSitio"]);
 
 
 ?>
@@ -92,8 +94,15 @@ $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
 	<link rel="icon" type="image/png" href="/icon/<?php echo($_SESSION["icon"]);?>"  />
+	<style>
+		:root {
+			--main-color: <?php echo($_SESSION["css_color"]); ?>
+		}
+      
+	</style>
 	<link rel="stylesheet" href="./css/index.css" />
 	<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
+	
 	
 <!-- slitslider -->
 
@@ -105,7 +114,7 @@ $_SESSION["css_name"]		 = getCSSFileName( $row["colorSitio"]);
 
 </head>
 <script>
-
+var urlPath = location.href
 
 var map ="";
 var marker = null;
@@ -210,7 +219,7 @@ function mostrarPropiedades(){
 	
    jQuery.ajax({
 		async: false,
-		url: 'http://localhost/devs/proyectos/esecure_new/modules_/imno/consulta.php',
+		url: urlPath + '/modules_/imno/consulta.php',
 		type: 'post',
 		data: datos
 	}).done(
@@ -295,7 +304,7 @@ function buscarPropiedades(){
 	
    jQuery.ajax({
 		async: false,
-		url: 'http://localhost/devs/proyectos/esecure_new/modules_/imno/consulta.php',
+		url:  urlPath + '/modules_/imno/consulta.php',
 		type: 'post',
 		data: datos
 	}).done(
@@ -322,7 +331,7 @@ function compartirFacebook(id_propiedad){
     
    jQuery.ajax({
         async: false,
-        url: 'http://localhost/devs/proyectos/esecure_new/modules_/imno/consulta.php',
+        url:  urlPath + '/modules_/imno/consulta.php',
 		type: 'post',
         data: datos
     }).done(
@@ -451,7 +460,7 @@ function consultarPropiedades(obj){
 	 
 		jQuery.ajax({
 			async: false,
-			url: 'http://localhost/devs/proyectos/esecure_new/modules_/imno/consulta.php',
+			url:  urlPath + '/modules_/imno/consulta.php',
 			type: 'post',
 			data: obj
 		}).done(
