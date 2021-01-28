@@ -110,19 +110,20 @@ function  getImagenesPublicas($conn, $id_propiedad)
 
 	if ($registros > 0) {
 
-		$retorno  = "<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" style=\"0border:3px solid red;wwidth:90%;\">";
+		$retorno  = "<div id=\"\" style=\"position:relative\"  >";
 
 
 
-		$cabecera = "<ol class=\"carousel-indicators\">";
-		$imagenes = "<div class=\"carousel-inner\"  style=\";width:100%;text-align:center;margin:auto;\">";
+		$cabecera = "<ol class=\"\">";
+		$imagenes = "<div class=\"owl-example-2\"  id=\"owl-example-2\" style=\";width:100%;text-align:center;margin:auto;\">";
 
 		$cnt = 0;
 		while ($datos = $stmt->fetch()) {
 			$cabecera .= "<li data-target=\"#myCarousel\" data-slide-to=\"$cnt\"" . ($cnt == 0 ? " class=\"active\"" : "") . "></li>";
 
 			$imagenes .= "<div " . ($cnt == 0 ? " class=\"item active\"" : " class=\"item\"") . ">" .
-				"<img src=\" $urlPath/descargar_imagen.php?id_imagen=" . $datos["id"] . "&dataName=$_SESSION[db_name]\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
+				//"<img src=\" $urlPath/descargar_imagen.php?id_imagen=" . $datos["id"] . "&dataName=$_SESSION[db_name]\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
+				"<img src=\"https://images.pexels.com/photos/5652548/pexels-photo-5652548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
 				"</div>";
 
 
@@ -134,16 +135,16 @@ function  getImagenesPublicas($conn, $id_propiedad)
 
 		$retorno .= $cabecera;
 		$retorno .= $imagenes;
-
-		$retorno .= "<a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">
-						  <span class=\"glyphicon glyphicon-chevron-left\"></span>
-						  <span class=\"sr-only\">Previous</span>
-					</a>
-					<a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">
-					  <span class=\"glyphicon glyphicon-chevron-right\"></span>
-					  <span class=\"sr-only\">Next</span>
-					</a>
-				</div>";
+		$retorno .= '<div class="paginator-center text-color text-center">
+		<ul>
+			<li class="prev">
+			<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M14.71 15.88L10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z"/></svg>
+			</li> 
+			<li class="next">
+			<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+			</li>
+		</ul>
+	</div>';
 	}
 
 	return $retorno;
