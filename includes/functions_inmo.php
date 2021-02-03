@@ -122,8 +122,8 @@ function  getImagenesPublicas($conn, $id_propiedad)
 			$cabecera .= "<li data-target=\"#myCarousel\" data-slide-to=\"$cnt\"" . ($cnt == 0 ? " class=\"active\"" : "") . "></li>";
 
 			$imagenes .= "<div " . ($cnt == 0 ? " class=\"item active\"" : " class=\"item\"") . ">" .
-				//"<img src=\" $urlPath/descargar_imagen.php?id_imagen=" . $datos["id"] . "&dataName=$_SESSION[db_name]\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
-				"<img src=\"https://images.pexels.com/photos/5652548/pexels-photo-5652548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
+				"<img src=\" $urlPath/descargar_imagen.php?id_imagen=" . $datos["id"] . "&dataName=$_SESSION[db_name]\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
+				//"<img src=\"https://images.pexels.com/photos/5652548/pexels-photo-5652548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940\" style=\"width:" . ($datos["vertical"] == 1 ? 280 : 500) . "\">" .
 				"</div>";
 
 

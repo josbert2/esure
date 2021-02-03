@@ -477,7 +477,8 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  bottom: 37px;
+  bottom: 47px;
+  overflow: hidden;
 }
 .slick-dots li {
   font-size: 0;
