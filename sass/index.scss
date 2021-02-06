@@ -712,8 +712,20 @@ body{
             width: 50% !important;
         }
     }
+    
+}
+@media (max-width: 1200px){
+    .search-module.form-group{
+        input, select{
+            width:100% !important;
+        }
+    }
+    #precio_hasta{
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 1100px){
+  
     .bg-img{
         max-width: 100% !important;
         width: 100% !important;
