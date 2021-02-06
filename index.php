@@ -100,7 +100,8 @@ $_SESSION["css_color"]		 = getCSSColor( $row["colorSitio"]);
 		}
       
 	</style>
-	<link rel="stylesheet" href="./css/index.css" />
+	<?php $rdn = rand(12314, 1500000); ?>
+	<link rel="stylesheet" href="./css/index.css?v=<?php echo $rdn; ?>" />
 	<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 	
 	
@@ -462,11 +463,10 @@ function consultarPropiedades(obj){
 			async: false,
 			url:  urlPath + '/modules_/imno/consulta.php',
 			type: 'post',
-			data: obj
-		}).done(
-			function (resp) {
+			data: obj,
+			success: function (resp) {
 				resp = resp.trim();
-				
+				console.log(resp)
 				if(eval(resp)){
 					var objData = eval(resp);
 					cargarNormal(objData);
@@ -481,8 +481,8 @@ function consultarPropiedades(obj){
 					prevArrow:'<div class="slick-d slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.71 15.88L10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z"/></svg></div>',
                     nextArrow:'<div class="slick-d slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg></div>'
 				});
-			}		
-		);		
+			}
+		})		
 	 },1000);
 	
 };
@@ -744,10 +744,10 @@ $(document).ready(function () {
 
 						<div class="row">
 						
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 							<select style="width:200px" id="cboTipoPropiedad" onchange="mostrarCamposTipoPropiedad()" class="form-control"><option id="0" value="0">Tipo de Propiedad</option><option id="1" value="1">Campo</option><option id="2" value="2">Casa</option><option id="3" value="3">Casa Country </option><option id="4" value="4">Cochera</option><option id="5" value="5">Departamento</option><option id="6" value="6">Duplex</option><option id="7" value="7">Galpon</option><option id="8" value="8">Local</option><option id="9" value="9">Oficina</option><option id="10" value="10">Terreno</option><option id="11" value="11">Terreno Country  </option></select>
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 									
 										 <select id="cboTipoOperacion" class="form-control select2 select2-hidden-accessible" data-placeholder="Tipo de operación" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px" onchange="controlTipoAlquiler()">
 											<option value="0">Tipo Operación</option>
@@ -758,10 +758,10 @@ $(document).ready(function () {
 										  </select>
 								
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 									<input type="text" id="localidad" class="form-control select2 select2-hidden-accessible" placeholder="Ingrese Localidad" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 								
 									<select id="cboHabilitaciones" class="form-control select2 select2-hidden-accessible" placeholder="Habitaciones" data-select2-container="big-text" tabindex="-1" aria-hidden="true">
 										<option value="0" selected>Habitaciones</option>
@@ -783,16 +783,16 @@ $(document).ready(function () {
 					</div>
 					<div class="row">
 					
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 									<input type="text" id="precio_desde" class="form-control select2 select2-hidden-accessible" placeholder="Precio Desde" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3">
+							<div class="col-xs-6 col-lg-3 col-md-6">
 									<input type="text" id="precio_hasta" class="form-control select2 select2-hidden-accessible" placeholder="Precio Hasta	" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3 full-max-input-select">
+							<div class="col-xs-6 col-lg-3 col-md-6 full-max-input-select">
 									<input type="text" id="superficie" class="form-control select2 select2-hidden-accessible" placeholder="Superficie Mínima" data-select2-container="big-text" rrequired="" tabindex="-1" aria-hidden="true" style="width:200px;font-family:Arial;font-size:14px;color:#555555;"/>
 							</div>
-							<div class="col-xs-6 col-sm-3 full-max-btn">
+							<div class="col-xs-6 col-lg-3 col-md-6 full-max-btn">
 								  <button class="btn btn-success"  onclick="buscarPropiedades()">Buscar</button>
 							</div>
 						</div>

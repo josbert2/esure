@@ -32,40 +32,50 @@ $id_propiedad = isSet($_GET["id"]) ? $_GET["id"] : 0;
 <html lang="en">
 <head>
 <title><?php echo($_SESSION["title"])?></title>
-<link rel="stylesheet" href="/css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 
 
-	
+<?php 
+$rrPath =  '../..'; 
+
+?>
 
 
 <meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/assets/script.js"></script>
-	<script type="text/javascript" src="/js/md5.js"></script>	
-	<script type="text/javascript" src="/js/_functions.js"></script>	
-	<script type="text/javascript" src="/assets/owl-carousel/owl.carousel.js"></script>
-	<script type="text/javascript" src="/assets/slitslider/js/modernizr.custom.79639.js"></script>
-	<script type="text/javascript" src="/assets/slitslider/js/jquery.ba-cond.min.js"></script>
-	<script type="text/javascript" src="/assets/slitslider/js/jquery.slitslider.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/script.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/js/md5.js"></script>	
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/js/_functions.js"></script>	
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/slitslider/js/modernizr.custom.79639.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/slitslider/js/jquery.ba-cond.min.js"></script>
+	<script type="text/javascript" src="<?php echo $rrPath; ?>/assets/slitslider/js/jquery.slitslider.js"></script>
 	
-	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css" />
-	<link rel="stylesheet" href="/assets/style.css"/>
-	<link rel="stylesheet" href="/assets/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="/assets/owl-carousel/owl.theme.css">
-	<link rel="stylesheet" type="text/css" href="/assets/slitslider/css/style.css" />
-	<link  type="text/css" rel="stylesheet"	media="all" href="/css/ui-lightness/jquery-ui-1.10.3.custom.css"></link>
-	<link rel="stylesheet" type="text/css" href="/assets/slitslider/css/custom.css" />
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/assets/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/assets/style.css"/>
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/assets/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/assets/owl-carousel/owl.theme.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $rrPath; ?>/assets/slitslider/css/style.css" />
+	<link  type="text/css" rel="stylesheet"	media="all" href="<?php echo $rrPath; ?>/css/ui-lightness/jquery-ui-1.10.3.custom.css"></link>
+	<link rel="stylesheet" type="text/css" href="<?php echo $rrPath; ?>/assets/slitslider/css/custom.css" />
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjnKGGqEz8RBxhQ5LalTkv4GxoETKxwAo&callback=initMap" async defer></script>
 	<link rel="stylesheet" href="<?php echo $_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI] . '/css/index.css' ?>" />
 	<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 	
 	<link rel="icon" type="image/png" href="/icon/<?php echo($_SESSION["icon"]);?>"  />
-
+    <style>
+		:root {
+			--main-color: <?php echo($_SESSION["css_color"]); ?>
+		}
+      
+	</style>
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/css/index.css" />
+	<link rel="stylesheet" href="<?php echo $rrPath; ?>/css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 <!-- slitslider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
 
 </head>
 <script>
@@ -205,7 +215,39 @@ function cargarNormal(resp){
 		
 	}
 };
+function crearCarousel(){
+	$(".owl-example-2").slick({
 
+// normal options...
+infinite: false,
+slidesToShow: 1,
+prevArrow: $('.prev'),
+nextArrow: $('.next'),
+// the magic
+responsive: [{
+
+	breakpoint: 1024,
+	settings: {
+	  slidesToShow: 1,
+	  infinite: true
+	}
+
+  }, {
+
+	breakpoint: 600,
+	settings: {
+	  slidesToShow: 1,
+	  dots: true
+	}
+
+  }, {
+
+	breakpoint: 300,
+	settings: "unslick" // destroys slick
+
+  }]
+});
+}
 
 
 function cargarPuntoEnMapa(id_propiedad, direccion, latitud, longitud,  icon, operacion, importe_operacion, comentario, comentario_barrio, comentario_normativa){
@@ -324,7 +366,7 @@ $(document).ready(function () {
 				objFiltroPropiedades.id_propiedad		= objData.id_propiedad ;
 				objFiltroPropiedades.id_tipo_operacion		= 3;
 				
-			
+			crearCarousel();
 			 consultarPropiedades(objFiltroPropiedades);
 	},1000);	
 		
@@ -397,7 +439,7 @@ $(document).ready(function () {
 
 
 <div class="container">
-  <div class="col-md-4" style=";webkit-box-shadow: 3px 3px 7px #BBBBBB; box-shadow: 3px 3px 7px #BBBBBB;font-size:15px;">
+  <div class="col-md-4" style=";webkit-box-shadow: 3px 3px 7px #BBBBBB; box-shadow: 3px 3px 7px #BBBBBB;font-size:15px;padding: 10px 10px;">
 							<!--span style="font-weight:bold">Comentario General</span><div id="comentario"></div>
 							<hr>
 							<span style="font-weight:bold">Comentario del Barrio</span><div id="comentario_barrio"></div>
