@@ -252,10 +252,10 @@ function getPropiedadesDestacadas($conn)
 
 			$arrayRta["cnt_preferenciales"] .= "<div class=\"sl-slide\" data-orientation=\"horizontal\" data-slice1-rotation=\"-25\" data-slice2-rotation=\"-25\" data-slice1-scale=\"2\" data-slice2-scale=\"2\">" .
 				"<div class=\"sl-slide-inner\"  style=\"0border:2px solid orange;\">" .
-				//"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"./modules_/imno/descargar_imagen.php?id_imagen=" . $id_imagen . "&dataName=$_SESSION[db_name]\" alt=\"properties\"/>" .
-				//"<img style=\"max-width:900px;\" class=\"bg-img iimg-responsive\" src=\"https://images.pexels.com/photos/6030228/pexels-photo-6030228.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 alt=\"properties\"/>".
-				"<div style=\"background: url(./modules_/imno/descargar_imagen.php?id_imagen=" . $id_imagen . "&dataName=$_SESSION[db_name]);    width: 100%;height: 100%;z-index: 1;position: absolute;background-repeat: no-repeat;background-size: cover;\"></div>".
-				"<div class=\"tituloDestacada\" style=\"pposition:relative;0border:2px solid red;margin-left:250px;\" id=\"titlePropiedad\">" .
+				
+				"<div style=\"background-position: center center;background-size: cover,100%;background-repeat: no-repeat;background-image: url(https://gonzalezmirinmobiliaria.com.ar/websites/images/slider/slide2.jpg);    width: 100%;height: 100%;z-index: 1;position: absolute;background-repeat: no-repeat;background-size: cover;\"></div>".
+				//"<div style=\"background-position: center center;background-size: cover,100%;background-repeat: no-repeat;background-image: url(./modules_/imno/descargar_imagen.php?id_imagen=" . $id_imagen . "&dataName=$_SESSION[db_name]);    width: 100%;height: 100%;z-index: 1;position: absolute;background-repeat: no-repeat;background-size: cover;\"></div>".
+				"<div class=\"tituloDestacada container\" style=\"pposition:relative;0border:2px solid red;\" id=\"titlePropiedad\">" .
 				"<h2>&nbsp;$descripcion_01</h2>" .
 				"<button id=\"divDtitlePropiedad\" type=\"button\" style=\"position:relative;margin-left:3px;width:250px;font-size:12px;\" onclick=\"$onlick\" class=\"ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only\" role=\"button\" aria-disabled=\"false\"><span class=\"ui-button-text\" style=\"background-color:#fff;color:#000;font-weight:bold;\"><span class=\" justify-content-center d-flex id-vivi\">$importe_operacion</span></br><span  class=\"main-color justify-content-center d-flex m-t-5\" style=\"font-size:17px;\">Ver Detalles</span></span>	</button>" .
 				"</div>" .
@@ -545,7 +545,8 @@ function getFiltroPropiedades($conn, $id_localidad = 0, $id_tipo_comercializacio
 					"<div class=\"img-container\">".
 					"<div class=\"image-holder slick-img\">";
 				foreach ($id_imagen as $array => $id) {
-					$arrayRta["cnt_NO_preferenciales"] .= "<div><img data-aqui src=\"./modules_/imno/descargar_imagen.php?id_imagen=" . $id["id"] . "&dataName=esure\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/></div>";
+					//	$arrayRta["cnt_NO_preferenciales"] .= "<div><img data-aqui src=\"./modules_/imno/descargar_imagen.php?id_imagen=" . $id["id"] . "&dataName=esure\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/></div>";
+					$arrayRta["cnt_NO_preferenciales"] .= "<div><div class=\"img-properties\" style=\"background-position: center center;background-size: cover,100%;background-repeat: no-repeat;background-image: url(https://gonzalezmirinmobiliaria.com.ar/storage/imagenes/Inmo-452/propiedad_1612534783_r51v.jpeg)\"></div></div>";
 				}
 
 				//"<img src=\"https://images.pexels.com/photos/5539157/pexels-photo-5539157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\" class=\"img-responsive\" style=\"max-height:250px;min-width:331px\" alt=\"properties\"/>".
