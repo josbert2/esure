@@ -712,6 +712,10 @@ body{
             width: 50% !important;
         }
     }
+    #owl-example .owl-item .image-holder img{
+        min-width: 100% !important;
+        width: 100%; 
+    }
     
 }
 @media (max-width: 1200px){

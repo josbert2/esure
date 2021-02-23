@@ -717,6 +717,11 @@ div.skeleton-content-3 {
   #owl-example .owl-item {
     width: 50% !important;
   }
+
+  #owl-example .owl-item .image-holder img {
+    min-width: 100% !important;
+    width: 100%;
+  }
 }
 @media (max-width: 1200px) {
   .search-module.form-group input, .search-module.form-group select {
