@@ -236,10 +236,11 @@ body{
     }
 }
 #owl-example{
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 35px;
+    display: flex !important;
+   margin: 0 10px;
+    flex-wrap: wrap;
     justify-items: center;
+    height: auto;
     .properties{
         margin-bottom: 0;
         padding: 0;
@@ -249,7 +250,14 @@ body{
         background-color: var(--main-color) !important;
     }
     .owl-item{
-        
+        width: 33% !important;
+        flex: 33% !important;
+        height: auto !important;
+    padding-left: 10px !important;
+    border-radius: 6px;
+    padding-right: 10px !important;
+    margin-bottom: 20px;
+
         border-radius: 6px;
         .image-holder{
             img{
@@ -444,7 +452,7 @@ body{
 }
 
 .image-holder{
-    height: 200px;
+    height: 250px;
     .owl-wrapper-outer{
         width: 100%  !important;
         height: 100% !important;
@@ -613,7 +621,10 @@ body{
         display: none;
     }
 }
-  
+.tituloDestacada .ui-button.ui-widget{
+ 
+    z-index: 999;
+}
 @media (max-width: 768px){
     .skeleton-wrapper{
         margin: 0;
@@ -668,6 +679,7 @@ body{
     }
     .tituloDestacada .ui-button.ui-widget{
         margin-top: 25px;
+        z-index: 999;
     }
     .flex-column-max{
         flex-direction: column;
@@ -699,15 +711,11 @@ body{
         height: 100%;
     }
 }
-@media (max-width: 1110px){
+
+@media (max-width: 920px){
     #owl-example{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 850px){
-    #owl-example{
-        grid-template-columns: repeat(2, 1fr);
-        display:flex;
+       
+        margin: 0 !important;
         .owl-item{
             width: 50% !important;
         }
@@ -716,6 +724,10 @@ body{
         min-width: 100% !important;
         width: 100%; 
     }
+    .container-filter{
+        max-width: 100% !important;
+    }
+
     
 }
 @media (max-width: 1200px){
@@ -783,5 +795,31 @@ body{
         .owl-item{
             width: 100% !important;
         }
+    }
+}
+
+.slick-img .img-properties{
+    position: relative;
+    height: 250px;
+    background-position: center center;
+    background-size: cover,100%;
+    background-repeat: no-repeat
+}
+
+.logo-navbar {
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    top: 36px;
+    position: relative;
+    z-index: 99;
+    position: absolute;
+    border: 1px solid #E0E0E0;
+    img{
+        height: 55px;
+        object-fit: contain;
+        max-width: 100%;
     }
 }

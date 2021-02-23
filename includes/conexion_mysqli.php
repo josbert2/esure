@@ -7,7 +7,7 @@ $OPCIONES = array(
 ); 
 //	$conn = new PDO("mysql:host=".'localhost'.";port=3306;dbname=".$_SESSION["db_name"], $_SESSION["db_user"], $_SESSION["db_password"], $OPCIONES)
 try {
-	$conn = new PDO("mysql:host=".'localhost'.";port=3306;dbname=encure", 'root', '', $OPCIONES);
+	$conn = new PDO("mysql:host=".'localhost'.";port=3306;dbname=ensure", 'root', '', $OPCIONES);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch( PDOException $Exception ) {

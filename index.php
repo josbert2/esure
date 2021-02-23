@@ -738,7 +738,7 @@ $(document).ready(function () {
 <!-- Buscador -->
 <div class="container">
 <div class="banner-search" sstyle="background-url:none:0border:3px solid blue;width:70%;text-align:center;margin-left:auto;margin-right:auto">
-  <div class="container" style="0border:3px solid blue;max-width:850px;text-align:center;margin-left:auto;margin-right:auto"> 
+  <div class="container container-filter" style="0border:3px solid blue;max-width:850px;text-align:center;margin-left:auto;margin-right:auto"> 
    	<div class="search">
 				<div class="search-module form-group" >
 

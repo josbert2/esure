@@ -20,13 +20,11 @@ if(is_numeric($empresa)){
 	//$empresa = str_replace("/", "", $aux[2]);
 };
 
-
-$r =  '../../';
-
-include $r . "includes/functions.php";
-include $r ."includes/functions_inmo.php";
-include $r .'includes/setDataEnterprise.php';
-include $r ."includes/conexion_mysqli.php";
+$r = '/devs/proyectos/esecure_new';
+include $_SERVER['DOCUMENT_ROOT']. $r . "/includes/functions.php";
+include $_SERVER['DOCUMENT_ROOT']. $r ."/includes/functions_inmo.php";
+include($_SERVER["DOCUMENT_ROOT"] . $r .'/includes/setDataEnterprise.php');
+include $_SERVER['DOCUMENT_ROOT']. $r ."/includes/conexion_mysqli.php";
 
 $id_propiedad = isSet($_GET["id"]) ? $_GET["id"] : 0;
 
@@ -64,7 +62,8 @@ $rrPath =  '../..';
 	<link  type="text/css" rel="stylesheet"	media="all" href="<?php echo $rrPath; ?>/css/ui-lightness/jquery-ui-1.10.3.custom.css"></link>
 	<link rel="stylesheet" type="text/css" href="<?php echo $rrPath; ?>/assets/slitslider/css/custom.css" />
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjnKGGqEz8RBxhQ5LalTkv4GxoETKxwAo&callback=initMap" async defer></script>
-	
+	<link rel="stylesheet" href="<?php echo $_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI] . '/css/index.css' ?>" />
+	<link rel="stylesheet" href="./css/dinamic_css/<?php echo($_SESSION["css_name"])?>.css"/>
 	
 	<link rel="icon" type="image/png" href="/icon/<?php echo($_SESSION["icon"]);?>"  />
     <style>
